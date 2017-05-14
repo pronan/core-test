@@ -36,7 +36,7 @@ export default {
             { type: 'radio', 
               name: self.field.name, 
               value: value, 
-              checked:self.initial===value}),
+              checked:self.value===value}),
           label: label,
         }
       })
