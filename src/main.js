@@ -1,5 +1,5 @@
 var Vue = require('vue')
-var App = require('./App.vue')
+var App = require('./app.vue')
 
 new Vue({
   el: '#app',
