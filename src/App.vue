@@ -1,16 +1,22 @@
 <template>
-
+<div id="app">
+  <h1>{{title}}</h1>
+  <router-view></router-view>
+</div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-  components: {
+var store = require('./store.js')
+var router = require('./router.js')
 
-  },
-  data () {
-    return {
-    }
+module.exports = { 
+  store: store,
+  router: router, 
+  computed: {
+    title: function () {
+      return this.$store.state.title
+    },
   },
 }
+
 </script>

@@ -29,7 +29,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.runtime.common.js',
+      'vue$': 'vue/dist/vue.common.js',
       'vuex$': 'vuex/dist/vuex.js',
       'vue-router$': 'vue-router/dist/vue-router.common.js',
       'vue-resource$': 'vue-resource/dist/vue-resource.common.js',
@@ -42,7 +42,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  // devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -54,8 +54,8 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
+    // new webpack.LoaderOptionsPlugin({
+    //   minimize: true
+    // })
   ])
 }
