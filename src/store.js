@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 var store = new Vuex.Store({
   state: {
-    router: require('./router.js'),
+    router: router,
     title: 'vuex + vue-router bug test',
   },
 })
