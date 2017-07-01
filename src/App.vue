@@ -3,6 +3,7 @@
 </template>
 
 <script>
+var name = 'abc'
 export default {
   name: 'app',
   components: {
@@ -10,6 +11,7 @@ export default {
   },
   data () {
     return {
+        name: `abc${name}xxx`,
     }
   },
 }

@@ -1,6 +1,20 @@
 var path = require('path')
 var webpack = require('webpack')
 
+var BABEL_LOADER = {
+  loader: 'babel-loader',
+  options: {
+    presets: [
+      ['vue-app', {
+        "targets": {
+          "browsers": ["ie >= 9"]
+        }
+      }]
+    ],
+    babelrc: false,
+  }
+}
+
 module.exports = {
   entry: './src/main.js',
   externals: {
@@ -17,10 +31,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: BABEL_LOADER,
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
           loaders: {
+            js: BABEL_LOADER,
           }
           // other vue-loader options go here
         }
@@ -42,7 +62,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  // devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -56,6 +76,12 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    })
+    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   sourceMap: true,
+    //   compress: {
+    //     warnings: false
+    //   }
+    // }),
   ])
 }
