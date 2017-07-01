@@ -18,6 +18,7 @@
     "vue-router": "^2.5.3",
     "vue-template-compiler": "^2.2.1",
     "vuex": "^2.3.1",
+    "vuex-router-sync": "^4.2.0",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
   }

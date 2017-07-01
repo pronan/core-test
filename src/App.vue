@@ -9,7 +9,13 @@
 var store = require('./store.js')
 var router = require('./router.js')
 
+var vrs = require('vuex-router-sync')
+
+vrs.sync(store, router)
+
 module.exports = { 
+  beforeCreate () {console.log('beforeCreate...')},
+  created () {console.log('created...foo:', this.$store.commit('routeTo', {path: '/test2'}))},
   store: store,
   router: router, 
   computed: {
