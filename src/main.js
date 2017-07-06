@@ -1,8 +1,9 @@
-var Vue = require('vue')
-var App = require('./app.vue')
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import ElementUI from 'element-ui'
+import App  from './app.vue'
 
-var s = `aaaaa`
-new Vue({
-  el: '#app',
-  render: h => h(App)
-})
+Vue.use(VueRouter)
+Vue.use(ElementUI)
+
+new Vue(App).$mount('#app')

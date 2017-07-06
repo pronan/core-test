@@ -35,6 +35,17 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         use: BABEL_LOADER,
       },
+      { 
+        test: /\.css$/, 
+        use: ["css-loader"],
+      }, 
+      {
+        test: /\.(svg|woff|woff2|ttf|eot)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'font/[name].[ext]'
+        }
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
