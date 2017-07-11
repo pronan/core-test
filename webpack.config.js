@@ -42,7 +42,6 @@ module.exports = {
           loaders: {
             js: BABEL_LOADER,
           }
-          // other vue-loader options go here
         }
       },
     ]
@@ -77,11 +76,11 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   sourceMap: true,
-    //   compress: {
-    //     warnings: false
-    //   }
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
+      }
+    }),
   ])
 }
